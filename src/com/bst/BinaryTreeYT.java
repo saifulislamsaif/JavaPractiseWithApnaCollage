@@ -1,5 +1,8 @@
 package com.bst;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTreeYT {
 
     static class Node {
@@ -30,48 +33,79 @@ public class BinaryTreeYT {
             return newNode;
         }
 
-        public static void preorder(Node root){
-            if (root == null){
-                System.out.println(-1+" ");
+        public static void preorder(Node root) {
+            if (root == null) {
+                System.out.println(-1 + " ");
                 return;
             }
-            System.out.println(root.data+" ");
+            System.out.println(root.data + " ");
             preorder(root.left);
             preorder(root.right);
         }
 
-        public static void inOrder(Node root){
-            if (root == null)
-            {
-                System.out.println(-1+" ");
+        public static void inOrder(Node root) {
+            if (root == null) {
+                System.out.println(-1 + " ");
                 return;
             }
             inOrder(root.left);
-            System.out.println(root.data+" ");
+            System.out.println(root.data + " ");
             inOrder(root.right);
         }
 
-        public static void postOrder(Node root){
-            if (root == null){
-                System.out.println(-1+" ");
+        public static void postOrder(Node root) {
+            if (root == null) {
+                System.out.println(-1 + " ");
                 return;
             }
             postOrder(root.right);
             postOrder(root.left);
-            System.out.println(root.data+" ");
+            System.out.println(root.data + " ");
         }
+
+        public static void levelOrder(Node root) {
+            if (root == null) {
+                return;
+            }
+            Queue<Node> q = new LinkedList<>();
+            q.add(root);
+            q.add(null);
+            while (!q.isEmpty()) {
+                Node curr = q.remove();
+                if (curr == null) {
+                    System.out.println();
+                    //queue empty
+                    if (q.isEmpty()) {
+                        break;
+                    } else {
+                        q.add(null);
+                    }
+                } else {
+                    System.out.print(curr.data + " ");
+                    if (curr.left != null) {
+                        q.add(curr.left);
+                    }
+                    if (curr.right != null) {
+                        q.add(curr.right);
+                    }
+                }
+            }
+        }
+
 
         public static void main(String[] args) {
 
             int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
             BinaryTree tree = new BinaryTree();
             Node root = tree.buildTree(nodes);
-            System.out.println("preOrder Data are");
-            preorder(root);
-            System.out.println("Inorder Data are");
-            inOrder(root);
-            System.out.println("PostOrder Data are");
-            postOrder(root);
+//            System.out.println("preOrder Data are");
+//            preorder(root);
+//            System.out.println("Inorder Data are");
+//            inOrder(root);
+//            System.out.println("PostOrder Data are");
+//            postOrder(root);
+            System.out.println("Level Order traversal are" + " ");
+            levelOrder(root);
         }
     }
 }
