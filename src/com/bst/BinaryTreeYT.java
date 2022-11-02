@@ -40,12 +40,38 @@ public class BinaryTreeYT {
             preorder(root.right);
         }
 
+        public static void inOrder(Node root){
+            if (root == null)
+            {
+                System.out.println(-1+" ");
+                return;
+            }
+            inOrder(root.left);
+            System.out.println(root.data+" ");
+            inOrder(root.right);
+        }
+
+        public static void postOrder(Node root){
+            if (root == null){
+                System.out.println(-1+" ");
+                return;
+            }
+            postOrder(root.right);
+            postOrder(root.left);
+            System.out.println(root.data+" ");
+        }
+
         public static void main(String[] args) {
 
             int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
             BinaryTree tree = new BinaryTree();
             Node root = tree.buildTree(nodes);
+            System.out.println("preOrder Data are");
             preorder(root);
+            System.out.println("Inorder Data are");
+            inOrder(root);
+            System.out.println("PostOrder Data are");
+            postOrder(root);
         }
     }
 }
