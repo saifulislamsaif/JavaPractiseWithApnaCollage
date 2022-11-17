@@ -70,26 +70,37 @@ public class BinaryTreeYT {
             Queue<Node> q = new LinkedList<>();
             q.add(root);
             q.add(null);
+
             while (!q.isEmpty()) {
-                Node curr = q.remove();
-                if (curr == null) {
+                Node currNode = q.remove();
+                if (currNode == null) {
                     System.out.println();
-                    //queue empty
                     if (q.isEmpty()) {
                         break;
                     } else {
                         q.add(null);
                     }
                 } else {
-                    System.out.print(curr.data + " ");
-                    if (curr.left != null) {
-                        q.add(curr.left);
+                    System.out.println(currNode.data +" ");
+                    if (currNode.left != null) {
+                        q.add(currNode.left);
                     }
-                    if (curr.right != null) {
-                        q.add(curr.right);
+                    if (currNode.right != null) {
+                        q.add(currNode.right);
                     }
                 }
+
             }
+        }
+        public static int height(Node root){
+            if (root == null)
+            {
+                return 0;
+            }
+            int leftheight = height(root.left);
+            int rightHeight = height(root.right);
+
+            return Math.max(leftheight,rightHeight)+1;
         }
 
 
@@ -106,6 +117,9 @@ public class BinaryTreeYT {
 //            postOrder(root);
             System.out.println("Level Order traversal are" + " ");
             levelOrder(root);
+
+            System.out.println("max height"+" ");
+            height(root);
         }
     }
 }
