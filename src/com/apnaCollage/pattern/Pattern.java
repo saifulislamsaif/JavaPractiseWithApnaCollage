@@ -1,11 +1,12 @@
 package com.apnaCollage.pattern;
 /*       slid rhombus with stars
 
+     ******
+    ******
+   ******
+  ******
  ******
- ******
- ******
- ******
- ******
+
 
  */
 
