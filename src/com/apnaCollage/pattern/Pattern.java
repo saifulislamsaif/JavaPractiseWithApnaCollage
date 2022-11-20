@@ -2,7 +2,7 @@ package com.apnaCollage.pattern;
 /*        half pyramid with numbers
 
 
- 1
+1
 1 2
 1 2 3
 1 2 3 4
