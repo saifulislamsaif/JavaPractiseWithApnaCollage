@@ -1,12 +1,12 @@
 package com.apnaCollage.pattern;
-/*      Pattern half pyramid
+/*       inverted half pyramid
 
- *
- **
- ***
- ****
  *****
- 
+ ****
+ ***
+ **
+ *
+
  */
 
 public class Pattern {
@@ -14,7 +14,7 @@ public class Pattern {
         int r, c;
         r = 5;
         c = 5;
-        for (int i = 1; i <= r; i++) {
+        for (int i = r; i >= 1; i--) {
             for (int j = 1; j <= i; j++) {
                 System.out.print("*");
             }
