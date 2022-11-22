@@ -1,26 +1,25 @@
 package com.apnaCollage.pattern;
-/*       Print Pascal’s Triangle.
+/*       Print half Pyramid..
 
-  1
-   1 1
-  1 2 1
- 1 3 3 1
-1 4 6 4 1
+     1
+    1 2
+   1 2 3
+  1 2 3 4
+ 1 2 3 4 5
 
  */
 
 public class Pattern {
     public static void main(String args[]) {
-        int n=4, number = 1;
+        int n=5;
         int space = n;
-        for (int i = 0; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
             for (int s =1;s<=space;s++){
                 System.out.print(" ");
             }
-            number=1;
-            for (int j = 0;j<=i;j++){
-                System.out.print(number+" ");
-                number = number*(i-j)/(j+1);
+
+            for (int j = 1;j<=i;j++){
+                System.out.print(j+" ");
             }
             space--;
             System.out.println();
