@@ -12,24 +12,22 @@ import java.time.Period;
 import java.util.Scanner;
 
 public class Pattern {
-    public void max(int first,int second){
-        if (first>second){
-            System.out.println("Big number is "+" "+ first);
-        }else if(first==second) {
-            System.out.println("Two number are equal");
-        }else {
-            System.out.println("Big number is "+" "+ second);
-        }
+   Double pi =3.1416;
+    public void max(int r){
+        Double radius = 2*pi*r;
+        System.out.println("Circumference is"+" "+radius);
     }
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter First Number");
-        int firstN = scanner.nextInt();
-        System.out.println("Enter First Number");
-        int secondN = scanner.nextInt();
+//        System.out.println("Enter First Number");
+//        int firstN = scanner.nextInt();
+//        System.out.println("Enter First Number");
+//        int secondN = scanner.nextInt();
+        System.out.println("Enter the Radius:");
+        int radius = scanner.nextInt();
 
         Pattern pattern = new Pattern();
-        pattern.max(firstN,secondN);
+        pattern.max(radius);
 
     }
 }
