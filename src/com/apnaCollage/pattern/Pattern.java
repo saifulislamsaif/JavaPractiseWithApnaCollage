@@ -1,29 +1,35 @@
 package com.apnaCollage.pattern;
-/*       Print half Pyramid..
+/*       Print Inverted Half Pyramid
 
-     1
-    1 2
-   1 2 3
-  1 2 3 4
- 1 2 3 4 5
+1111
+222
+33
+4
 
  */
 
+import java.time.Period;
+import java.util.Scanner;
+
 public class Pattern {
-    public static void main(String args[]) {
-        int n=5;
-        int space = n;
-        for (int i = 1; i <= n; i++) {
-            for (int s =1;s<=space;s++){
-                System.out.print(" ");
+int n=5,sum=0;
+    public void sum(){
+        for (int i = 0;i<=n;i++){
+            if (i%2==1){
+                sum=sum+i;
             }
 
-            for (int j = 1;j<=i;j++){
-                System.out.print(j+" ");
-            }
-            space--;
-            System.out.println();
         }
+        System.out.println(sum);
+    }
+    public static void main(String args[]) {
+//        Scanner scanner = new Scanner(System.in);
+//        int firstN = scanner.nextInt();
+//        int secondN = scanner.nextInt();
+//        int thirdN = scanner.nextInt();
+
+        Pattern pattern = new Pattern();
+        pattern.sum();
 
     }
 }
